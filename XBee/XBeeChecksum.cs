@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
-using NLog;
 
 namespace XBee
 {
     public class XBeeChecksum
     {
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public static byte Calculate(byte[] data)
         {

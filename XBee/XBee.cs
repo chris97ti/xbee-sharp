@@ -1,6 +1,5 @@
 using System;
 using System.Threading;
-using NLog;
 using XBee.Exceptions;
 
 namespace XBee
@@ -15,7 +14,7 @@ namespace XBee
 
     public class XBee
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private IXBeeConnection connection;
 
         private Thread receiveThread;

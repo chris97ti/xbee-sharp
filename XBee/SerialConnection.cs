@@ -1,13 +1,12 @@
 using System.IO;
 using System.IO.Ports;
-using NLog;
 using XBee.Utils;
 
 namespace XBee
 {
     public class SerialConnection : IXBeeConnection
     {
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly SerialPort serialPort;
         private IPacketReader reader;
 
